@@ -462,7 +462,7 @@ teamingAI:SequenceFlowMapping a rr:TriplesMap ;
     rml:logicalSource [ rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmn:process']/*[name()='bpmn:sequenceFlow']" ;
             rml:referenceFormulation ql:XPath ;
             rml:source "example_ronse.bpmn" ] ;
-    rr:predicateObjectMap [ rr:objectMap [ rr:constant bbo:sequenceFlow ] ;
+    rr:predicateObjectMap [ rr:objectMap [ rr:constant bbo:SequenceFlow ] ;
             rr:predicate rdfs:subClassOf ],
         [ rr:ObjectMap [ rr:constant "sequence flow" ;
                     rr:language "en" ] ;
