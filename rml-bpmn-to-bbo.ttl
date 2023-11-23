@@ -956,6 +956,44 @@ teamingAI:eXlusiveORGatewayMapping
         rr:objectMap [ rr:template "{./*[name()='bpmn:incoming']}" ]
     ].
 
+teamingAI:inclusiveGatewayMapping
+    a rr:TriplesMap;
+
+    rml:logicalSource [
+        rml:source "<SOURCE_XML>";
+        rml:referenceFormulation ql:XPath;
+        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmn:process']//*[name()='bpmn:inclusiveGateway']"
+    ];
+
+    rr:subjectMap [
+        rr:template "{@id}"
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate rdfs:subClassOf;
+        rr:objectMap [ rr:constant bbo:InclusiveGateway ]
+    ],
+    [
+        rr:predicate teamingAI:belongsToProcess;
+        rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
+    ],
+    [
+        rr:predicate bbo:DefaultSequenceFlow;
+        rr:objectMap [ rr:template "{@default}" ]
+    ],
+    [
+        rr:predicate bbo:name;
+        rr:objectMap [ rml:reference "@name" ]
+    ],
+    [
+        rr:predicate bbo:has_targetRef;
+        rr:objectMap [ rr:template "{./*[name()='bpmn:outgoing']}" ]
+    ],
+    [
+        rr:predicate bbo:has_sourceRef;
+        rr:objectMap [ rr:template "{./*[name()='bpmn:incoming']}" ]
+    ].
+
 teamingAI:ProcessMapping
     a rr:TriplesMap;
 
