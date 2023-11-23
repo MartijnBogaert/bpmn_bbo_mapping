@@ -56,13 +56,6 @@ teamingAI:BoundaryEventMapping
         rr:objectMap [ rr:constant bbo:BoundaryEvent ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "boundary event";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate bbo:attachedToRef;
         rr:objectMap [ rr:template "{@attachedToRef}" ]
     ],
@@ -101,13 +94,6 @@ teamingAI:BusinessRuleTaskMapping
         rr:objectMap [ rr:constant bbo:BusinessRuleTask ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "business rule task";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -136,13 +122,6 @@ teamingAI:CollaborationMapping
     [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "pool";
-            rr:language "en"
-        ]
     ].
 
 teamingAI:DataInputAssociationMapping
@@ -161,13 +140,6 @@ teamingAI:DataInputAssociationMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bboExtension:DataInputAssociation ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "data input association";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate teamingAI:belongsToProcess;
@@ -204,13 +176,6 @@ teamingAI:DataObjectMapping
         rr:objectMap [ rr:constant bboExtension:DataObject ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "data object";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -231,13 +196,6 @@ teamingAI:DataObjectReferenceMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bboExtension:DataObjectReference ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "data object reference";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate bbo:name;
@@ -270,13 +228,6 @@ teamingAI:DataOutputAssociationMapping
         rr:objectMap [ rr:constant bboExtension:DataOutputAssociation ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "data output association";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -307,13 +258,6 @@ teamingAI:DataStoreReferenceMapping
         rr:objectMap [ rr:constant bboExtension:DataStoreReference ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "data store reference";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -338,13 +282,6 @@ teamingAI:EndEventMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:EndEvent ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "end event";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate teamingAI:belongsToProcess;
@@ -373,13 +310,6 @@ teamingAI:ErrorEventDefinitionMapping
         rr:objectMap [ rr:constant bbo:ErrorEventDefinition ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "error event defintion";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -400,10 +330,6 @@ teamingAI:ErrorMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:Error ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [ rr:constant "error"@en ]
     ],
     [
         rr:predicate bbo:name;
@@ -428,13 +354,6 @@ teamingAI:IncomingMapping
         rr:objectMap [ rr:constant bbo:SequenceFlow ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "incoming";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -455,13 +374,6 @@ teamingAI:IntermediateThrowMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:IntermediateThrowEvent ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "intermediate throw event";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate teamingAI:belongsToProcess;
@@ -506,13 +418,6 @@ teamingAI:LaneMapping
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "lane";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate bbo:has_activity;
         rr:objectMap [ rr:template "{*[text()]}" ]
     ],
@@ -541,13 +446,6 @@ teamingAI:LaneSetMapping
     [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "lane set";
-            rr:language "en"
-        ]
     ].
 
 teamingAI:ManualTask
@@ -566,13 +464,6 @@ teamingAI:ManualTask
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:ManualTask ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "manual task";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate bbo:name;
@@ -601,13 +492,6 @@ teamingAI:MessageEventDefinitionMapping
         rr:objectMap [ rr:constant bbo:MessageEventDefinition ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "message event defintion";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -632,13 +516,6 @@ teamingAI:MessageFlowMapping
     [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "message flow";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate bbo:name;
@@ -693,13 +570,6 @@ teamingAI:ParallelGatewayMapping
         rr:objectMap [ rr:constant bbo:ParallelGateway ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "parallel gateway";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate bbo:DefaultSequenceFlow;
         rr:objectMap [ rr:template "{@default}" ]
     ],
@@ -742,13 +612,6 @@ teamingAI:ParticipantMapping
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "participant";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -773,10 +636,6 @@ teamingAI:PropertyMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:Property ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [ rr:constant "property"@en ]
     ],
     [
         rr:predicate bbo:name;
@@ -811,13 +670,6 @@ teamingAI:ReceiveTaskMapping
     [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:ReceiveTask ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "receive task";
-            rr:language "en"
-        ]
     ].
 
 teamingAI:ScriptTaskMapping
@@ -836,13 +688,6 @@ teamingAI:ScriptTaskMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:ScriptTask ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "script task";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate bbo:name;
@@ -871,13 +716,6 @@ teamingAI:SendTaskMapping
         rr:objectMap [ rr:constant bbo:SendTask ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "send task";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -902,13 +740,6 @@ teamingAI:SequenceFlowMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:SequenceFlow ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:ObjectMap [
-            rr:constant "sequence flow";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate bbo:has_sourceRef;
@@ -945,13 +776,6 @@ teamingAI:ServiceTaskMapping
         rr:objectMap [ rr:constant bbo:ServiceTask ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "service task";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -976,13 +800,6 @@ teamingAI:StartEventMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:StartEvent ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "start event";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate bbo:has_targetRef;
@@ -1041,13 +858,6 @@ teamingAI:TaskMapping
         rr:objectMap [ rr:constant bbo:Task ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "task";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -1074,18 +884,8 @@ teamingAI:TextAnnotationMapping
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
     [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "text annotation";
-            rr:language "en"
-        ]
-    ],
-    [
         rr:predicate rdfs:comment;
-        rr:objectMap [
-            rr:language "en";
-            rr:template "{*[text()]}"
-        ]
+        rr:objectMap [ rr:template "{*[text()]}" ]
     ],
     [
         rr:predicate rdfs:subClassOf;
@@ -1108,13 +908,6 @@ teamingAI:UserTaskMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:UserTask ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [
-            rr:constant "user task";
-            rr:language "en"
-        ]
     ],
     [
         rr:predicate bbo:name;
@@ -1141,13 +934,6 @@ teamingAI:eXlusiveORGatewayMapping
     rr:predicateObjectMap [
         rr:predicate rdfs:subClassOf;
         rr:objectMap [ rr:constant bbo:ExclusiveGateway ]
-    ],
-    [
-        rr:predicate rdfs:label;
-        rr:objectMap [ 
-            rr:constant "exclusive or gateway";
-            rr:language "en" 
-        ]
     ],
     [
         rr:predicate teamingAI:belongsToProcess;
