@@ -12,9 +12,10 @@
 
 ## Usage
 
+1. Have a BPMN file ready (e.g. you can use [this one](https://github.com/camunda/bpmn-for-research/blob/master/BPMN%20for%20Research/English/01-Dispatch-of-goods/03-Solution/Dispatch-of-goods.bpmn) or any example BPMN available in its repo).
 1. Download [RMLMapper](https://github.com/RMLio/rmlmapper-java).
-2. Make sure all RML `TriplesMap`s' `logicalSource`s are given the correct `source` (e.g. local file path of bpmn file).
-3. Run the following command in the current folder (base URI is set to `https://example.org` + check [RMLMapper documentation](https://github.com/RMLio/rmlmapper-java#cli) for full details):
+1. Make sure all RML `TriplesMap`s' `logicalSource`s are given the correct `source` (e.g. local file path of bpmn file).
+1. Run the following command in the current folder (base URI is set to `https://example.org` + check [RMLMapper documentation](https://github.com/RMLio/rmlmapper-java#cli) for full details):
 
 ```bash
 java -jar ../rmlmapper-6.2.2-r371-all.jar -m rml-bpmn-to-bbo.ttl -o output.nq -b 'https://example.org/'
