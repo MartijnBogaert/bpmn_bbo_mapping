@@ -20,6 +20,10 @@
 java -jar ../rmlmapper-6.2.2-r371-all.jar -m rml-bpmn-to-bbo.ttl -o output.nq -b 'https://example.org/'
 ```
 
+# Progress
+
+Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn-to-bbo.ttl)) yet. The table in [`mapping-progress.md`](mapping-progress.md) gives an overview of the yet to be and already mapped classes, as well as which BPMN element(s) map(s) to which BBO class. When expanding the mapping, please also update the table.
+
 ## Issues
 
 - Elements inside subprocesses are not mapped.
