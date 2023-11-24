@@ -2,14 +2,16 @@
 
 Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn-to-bbo.ttl)) yet. The following table gives an overview of the yet to be and already mapped classes, as well as which BPMN element(s) map(s) to which BBO class. When expanding the mapping, please also update the table.
 
+Note: all BBO classes and their specifications can be found here: [https://www.irit.fr/recherches/MELODI/ontologies/BBO/index-en.html#classes-headline](https://www.irit.fr/recherches/MELODI/ontologies/BBO/index-en.html#classes-headline).
+
 | Mapped | BBO class                               | BPMN element(s)                  |
-| ------ | --------------------------------------- | -------------------------------- |
+| :----: | --------------------------------------- | -------------------------------- |
 |        | Activity                                |                                  |
 |        | AdHocSubProcess                         |                                  |
 |        | Agent                                   |                                  |
 |        | AllMultiInstanceLoopCharacteristics     |                                  |
-| ✅     | BoundaryEvent                           | boundaryEvent                    |
-| ✅     | BusinessRuleTask                        | businessRuleTask                 |
+|   ✅   | BoundaryEvent                           | boundaryEvent                    |
+|   ✅   | BusinessRuleTask                        | businessRuleTask                 |
 |        | CallableElement                         |                                  |
 |        | CallActivity                            |                                  |
 |        | CancelEvent                             |                                  |
@@ -35,12 +37,12 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | Device                                  |                                  |
 |        | DivergingGateway                        |                                  |
 |        | DocumentResource                        |                                  |
-| ✅     | EndEvent                                | endEvent                         |
+|   ✅   | EndEvent                                | endEvent                         |
 |        | Enterprise                              |                                  |
 |        | EquipmentDraw                           |                                  |
-| ✅     | Error                                   | error                            |
+|   ✅   | Error                                   | error                            |
 |        | ErrorEvent                              |                                  |
-| ✅     | ErrorEventDefinition                    | errorEventDefinition             |
+|   ✅   | ErrorEventDefinition                    | errorEventDefinition             |
 |        | Escalation                              |                                  |
 |        | EscalationEvent                         |                                  |
 |        | EscalationEventDefinition               |                                  |
@@ -50,7 +52,7 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | EventDefinition                         |                                  |
 |        | EventSubProcessStartEvent               |                                  |
 |        | ExclusiveEventBasedGateway              |                                  |
-| ✅     | ExclusiveGateway                        | exclusiveGateway                 |
+|   ✅   | ExclusiveGateway                        | exclusiveGateway                 |
 |        | ExecutableBusinessProcess               |                                  |
 |        | ExecutableScript                        |                                  |
 |        | Expression                              |                                  |
@@ -68,14 +70,14 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | Group                                   |                                  |
 |        | HumanResource                           |                                  |
 |        | ImplicitThrowEvent                      |                                  |
-| ✅     | InclusiveGateway                        | inclusiveGateway                 |
+|   ✅   | InclusiveGateway                        | inclusiveGateway                 |
 |        | InputOutputBinding                      |                                  |
 |        | InputOutputSpecification                |                                  |
 |        | InputSet                                |                                  |
 |        | Interface                               |                                  |
 |        | IntermediateCatchEvent                  |                                  |
 |        | IntermediateEvent                       |                                  |
-| ✅     | IntermediateThrowEvent                  | intermediateThrowEvent           |
+|   ✅   | IntermediateThrowEvent                  | intermediateThrowEvent           |
 |        | InterruptingBoundaryEvent               |                                  |
 |        | InterruptingEventSubProcessStartEvent   |                                  |
 |        | InterruptingEventSubProcessStartEvent   |                                  |
@@ -83,11 +85,11 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | LinkEvent                               |                                  |
 |        | LinkEventDefinition                     |                                  |
 |        | LoopCharacteristics                     |                                  |
-| ✅     | ManualTask                              | manualTask                       |
+|   ✅   | ManualTask                              | manualTask                       |
 |        | ManufacturingFacility                   |                                  |
 |        | MaterialResource                        |                                  |
 |        | Message                                 |                                  |
-| ✅     | MessageEventDefinition                  | messageEventDefinition           |
+|   ✅   | MessageEventDefinition                  | messageEventDefinition           |
 |        | MixedGateway                            |                                  |
 |        | MultiInstanceLoopCharacteristics        |                                  |
 |        | MultipleEvent                           |                                  |
@@ -102,7 +104,7 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | OutputSet                               |                                  |
 |        | ParallelEventBasedGateway               |                                  |
 |        | ParallelAdHocSubProcess                 |                                  |
-| ✅     | ParallelGateway                         | parallelGateway                  |
+|   ✅   | ParallelGateway                         | parallelGateway                  |
 |        | ParallelMultipleEvent                   |                                  |
 |        | Parameter                               |                                  |
 |        | ParameterExpectedValue                  |                                  |
@@ -110,13 +112,13 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | ParameterValueBinding                   |                                  |
 |        | Person                                  |                                  |
 |        | PrivateProcess                          |                                  |
-| ✅     | Process                                 | process                          |
+|   ✅   | Process                                 | process                          |
 |        | ProcessStartEvent                       |                                  |
-| ✅     | Property                                | property                         |
+|   ✅   | Property                                | property                         |
 |        | PublicProcess                           |                                  |
 |        | QualitativeParameter                    |                                  |
 |        | QuantitativeParameter                   |                                  |
-| ✅     | ReceiveTask                             | receiveTask                      |
+|   ✅   | ReceiveTask                             | receiveTask                      |
 |        | Rendering                               |                                  |
 |        | Resource                                |                                  |
 |        | ResourceCollection                      |                                  |
@@ -125,11 +127,11 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | Role                                    |                                  |
 |        | RootElement                             |                                  |
 |        | Scheme                                  |                                  |
-| ✅     | ScriptTask                              | scriptTask                       |
-| ✅     | SendTask                                | sendTask                         |
-| ✅     | SequenceFlow                            | incoming, outgoing, sequenceFlow |
+|   ✅   | ScriptTask                              | scriptTask                       |
+|   ✅   | SendTask                                | sendTask                         |
+|   ✅   | SequenceFlow                            | incoming, outgoing, sequenceFlow |
 |        | SequentialAdHocSubProcess               |                                  |
-| ✅     | ServiceTask                             | serviceTask                      |
+|   ✅   | ServiceTask                             | serviceTask                      |
 |        | Shop                                    |                                  |
 |        | Signal                                  |                                  |
 |        | SignalEvent                             |                                  |
@@ -137,11 +139,11 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | SoftwareResource                        |                                  |
 |        | SparePart                               |                                  |
 |        | StandardLoopCharacteristics             |                                  |
-| ✅     | StartEvent                              | startEvent                       |
+|   ✅   | StartEvent                              | startEvent                       |
 |        | Station                                 |                                  |
-| ✅     | SubProcess                              | subProcess                       |
+|   ✅   | SubProcess                              | subProcess                       |
 |        | SubProcessStartEvent                    |                                  |
-| ✅     | Task                                    | task                             |
+|   ✅   | Task                                    | task                             |
 |        | TechnicalDocument                       |                                  |
 |        | Telecommand                             |                                  |
 |        | TerminateEvent                          |                                  |
@@ -156,6 +158,6 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 |        | UnitOfMeasure                           |                                  |
 |        | UnspecifiedGateway                      |                                  |
 |        | UserGuide                               |                                  |
-| ✅     | UserTask                                | userTask                         |
+|   ✅   | UserTask                                | userTask                         |
 |        | WorkProduct                             |                                  |
 |        | WorkProcedureDocument                   |
