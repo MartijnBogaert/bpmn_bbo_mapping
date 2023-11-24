@@ -27,3 +27,4 @@ Not all BBO classes are present in the mapping ([`rml-bpmn-to-bbo.ttl`](rml-bpmn
 ## Issues
 
 - Elements inside subprocesses are not mapped.
+- Not all BPMN elements are covered by the mapping yet; [`mapping-progress.md`](mapping-progress.md) gives an overview of which are and which are not.
