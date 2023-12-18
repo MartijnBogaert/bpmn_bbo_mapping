@@ -1,6 +1,5 @@
 @prefix bbo: <https://www.irit.fr/recherches/MELODI/ontologies/BBO#> .
 @prefix bboExtension: <https://www.teamingai-project.eg/BBOExtension#> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix ql: <http://semweb.mmlab.be/ns/ql#> .
 @prefix rami: <https://w3id.org/i40/rami#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -18,14 +17,11 @@ teamingAI:AssociationMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:Association
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:Association ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -48,14 +44,11 @@ teamingAI:BoundaryEventMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:BoundaryEvent
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:BoundaryEvent ]
-    ],
-    [
         rr:predicate bbo:attachedToRef;
         rr:objectMap [ rr:template "{@attachedToRef}" ]
     ],
@@ -86,14 +79,11 @@ teamingAI:BusinessRuleTaskMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:BusinessRuleTask
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:BusinessRuleTask ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -112,14 +102,11 @@ teamingAI:CollaborationMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:Collaboration
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:Collaboration ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -134,14 +121,11 @@ teamingAI:DataInputAssociationMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:DataInputAssociation
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:DataInputAssociation ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -168,14 +152,11 @@ teamingAI:DataObjectMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:DataObject
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:DataObject ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -190,14 +171,11 @@ teamingAI:DataObjectReferenceMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:DataObjectReference
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:DataObjectReference ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -220,14 +198,11 @@ teamingAI:DataOutputAssociationMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:DataOutputAssociation
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:DataOutputAssociation ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -250,14 +225,11 @@ teamingAI:DataStoreReferenceMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:DataStoreReference
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:DataStoreReference ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -276,20 +248,21 @@ teamingAI:EndEventMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:EndEvent
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:EndEvent ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
     [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
+    ],
+    [
+        rr:predicate bbo:has_sourceRef;
+        rr:objectMap [ rr:template "{./*[name()='bpmn:incoming']}" ]
     ].
 
 teamingAI:ErrorEventDefinitionMapping
@@ -302,14 +275,11 @@ teamingAI:ErrorEventDefinitionMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:ErrorEventDefinition
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:ErrorEventDefinition ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -324,38 +294,83 @@ teamingAI:ErrorMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:Error
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:Error ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ].
 
-teamingAI:IncomingMapping
+teamingAI:ExlusiveGatewayMapping
     a rr:TriplesMap;
 
     rml:logicalSource [
         rml:source "<SOURCE_XML>";
         rml:referenceFormulation ql:XPath;
-        rml:iterator "//*[name()='bpmn:incoming']"
+        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmn:process']//*[name()='bpmn:exclusiveGateway']"
     ];
 
     rr:subjectMap [
-        rr:template "{*[text()]}"
+        rr:template "{@id}";
+        rr:class bbo:ExclusiveGateway
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:SequenceFlow ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
+    ],
+    [
+        rr:predicate bbo:DefaultSequenceFlow;
+        rr:objectMap [ rr:template "{@default}" ]
+    ],
+    [
+        rr:predicate bbo:name;
+        rr:objectMap [ rml:reference "@name" ]
+    ],
+    [
+        rr:predicate bbo:has_targetRef;
+        rr:objectMap [ rr:template "{./*[name()='bpmn:outgoing']}" ]
+    ],
+    [
+        rr:predicate bbo:has_sourceRef;
+        rr:objectMap [ rr:template "{./*[name()='bpmn:incoming']}" ]
+    ].
+
+teamingAI:InclusiveGatewayMapping
+    a rr:TriplesMap;
+
+    rml:logicalSource [
+        rml:source "<SOURCE_XML>";
+        rml:referenceFormulation ql:XPath;
+        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmn:process']//*[name()='bpmn:inclusiveGateway']"
+    ];
+
+    rr:subjectMap [
+        rr:template "{@id}";
+        rr:class bbo:InclusiveGateway
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate teamingAI:belongsToProcess;
+        rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
+    ],
+    [
+        rr:predicate bbo:DefaultSequenceFlow;
+        rr:objectMap [ rr:template "{@default}" ]
+    ],
+    [
+        rr:predicate bbo:name;
+        rr:objectMap [ rml:reference "@name" ]
+    ],
+    [
+        rr:predicate bbo:has_targetRef;
+        rr:objectMap [ rr:template "{./*[name()='bpmn:outgoing']}" ]
+    ],
+    [
+        rr:predicate bbo:has_sourceRef;
+        rr:objectMap [ rr:template "{./*[name()='bpmn:incoming']}" ]
     ].
 
 teamingAI:IntermediateThrowMapping
@@ -368,14 +383,11 @@ teamingAI:IntermediateThrowMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:IntermediateThrowEvent
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:IntermediateThrowEvent ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -406,14 +418,11 @@ teamingAI:LaneMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:Lane
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:Lane ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -436,14 +445,11 @@ teamingAI:LaneSetMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:LaneSet
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:LaneSet ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -458,14 +464,11 @@ teamingAI:ManualTask
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:ManualTask
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:ManualTask ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -484,14 +487,11 @@ teamingAI:MessageEventDefinitionMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:MessageEventDefinition
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:MessageEventDefinition ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ].
@@ -506,14 +506,11 @@ teamingAI:MessageFlowMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:MessageFlow
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:MessageFlow ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -530,28 +527,6 @@ teamingAI:MessageFlowMapping
         rr:objectMap [ rr:template "{@targetRef}" ]
     ].
 
-teamingAI:OutgoingMapping
-    a rr:TriplesMap;
-
-    rml:logicalSource [
-        rml:source "<SOURCE_XML>";
-        rml:referenceFormulation ql:XPath;
-        rml:iterator "//*[name()='bpmn:outgoing']"
-    ];
-
-    rr:subjectMap [
-        rr:template "{*[text()]}"
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:SequenceFlow ]
-    ],
-    [
-        rr:predicate teamingAI:belongsToProcess;
-        rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
-    ].
-
 teamingAI:ParallelGatewayMapping
     a rr:TriplesMap;
 
@@ -562,14 +537,11 @@ teamingAI:ParallelGatewayMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:ParallelGateway
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:ParallelGateway ]
-    ],
-    [
         rr:predicate bbo:DefaultSequenceFlow;
         rr:objectMap [ rr:template "{@default}" ]
     ],
@@ -600,14 +572,11 @@ teamingAI:ParticipantMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:Participant
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:Participant ]
-    ],
-    [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
     ],
@@ -620,6 +589,20 @@ teamingAI:ParticipantMapping
         rr:objectMap [ rr:template "{@processRef}" ]
     ].
 
+teamingAI:ProcessMapping
+    a rr:TriplesMap;
+
+    rml:logicalSource [
+        rml:source "<SOURCE_XML>";
+        rml:referenceFormulation ql:XPath;
+        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmn:process']"
+    ];
+
+    rr:subjectMap [
+        rr:template "{@id}";
+        rr:class bbo:Process
+    ].
+
 teamingAI:PropertyMapping
     a rr:TriplesMap;
 
@@ -630,14 +613,11 @@ teamingAI:PropertyMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:Property
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:Property ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -656,7 +636,8 @@ teamingAI:ReceiveTaskMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:ReceiveTask
     ];
 
     rr:predicateObjectMap [
@@ -666,10 +647,6 @@ teamingAI:ReceiveTaskMapping
     [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
-    ],
-    [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:ReceiveTask ]
     ].
 
 teamingAI:ScriptTaskMapping
@@ -682,14 +659,11 @@ teamingAI:ScriptTaskMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:ScriptTask
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:ScriptTask ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -708,14 +682,11 @@ teamingAI:SendTaskMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:SendTask
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:SendTask ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -734,14 +705,11 @@ teamingAI:SequenceFlowMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:SequenceFlow
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:SequenceFlow ]
-    ],
-    [
         rr:predicate bbo:has_sourceRef;
         rr:objectMap [ rr:template "{@sourceRef}" ]
     ],
@@ -768,14 +736,11 @@ teamingAI:ServiceTaskMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:ServiceTask
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:ServiceTask ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -794,16 +759,13 @@ teamingAI:StartEventMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:StartEvent
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:StartEvent ]
-    ],
-    [
         rr:predicate bbo:has_targetRef;
-        rr:objectMap [ rr:template "{*[text()]}" ]
+        rr:objectMap [ rr:template "{./*[name()='bpmn:outgoing']}" ]
     ],
     [
         rr:predicate teamingAI:belongsToProcess;
@@ -824,7 +786,8 @@ teamingAI:SubProcessMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:SubProcess
     ];
 
     rr:predicateObjectMap [
@@ -834,10 +797,6 @@ teamingAI:SubProcessMapping
     [
         rr:predicate teamingAI:belongsToView;
         rr:objectMap [ rr:constant teamingAI:BusinessProcessManagementView ]
-    ],
-    [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:SubProcess ]
     ].
 
 teamingAI:TaskMapping
@@ -850,14 +809,11 @@ teamingAI:TaskMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:Task
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:Task ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
@@ -876,7 +832,8 @@ teamingAI:TextAnnotationMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bboExtension:TextAnnotation
     ];
 
     rr:predicateObjectMap [
@@ -886,10 +843,6 @@ teamingAI:TextAnnotationMapping
     [
         rr:predicate rdfs:comment;
         rr:objectMap [ rr:template "{*[text()]}" ]
-    ],
-    [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bboExtension:TextAnnotation ]
     ].
 
 teamingAI:UserTaskMapping
@@ -902,120 +855,15 @@ teamingAI:UserTaskMapping
     ];
 
     rr:subjectMap [
-        rr:template "{@id}"
+        rr:template "{@id}";
+        rr:class bbo:UserTask
     ];
 
     rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:UserTask ]
-    ],
-    [
         rr:predicate bbo:name;
         rr:objectMap [ rml:reference "@name" ]
     ],
     [
         rr:predicate teamingAI:belongsToProcess;
         rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
-    ].
-
-teamingAI:eXlusiveORGatewayMapping
-    a rr:TriplesMap;
-
-    rml:logicalSource [
-        rml:source "<SOURCE_XML>";
-        rml:referenceFormulation ql:XPath;
-        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmn:process']//*[name()='bpmn:exclusiveGateway']"
-    ];
-
-    rr:subjectMap [
-        rr:template "{@id}"
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:ExclusiveGateway ]
-    ],
-    [
-        rr:predicate teamingAI:belongsToProcess;
-        rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
-    ],
-    [
-        rr:predicate bbo:DefaultSequenceFlow;
-        rr:objectMap [ rr:template "{@default}" ]
-    ],
-    [
-        rr:predicate bbo:name;
-        rr:objectMap [ rml:reference "@name" ]
-    ],
-    [
-        rr:predicate bbo:has_targetRef;
-        rr:objectMap [ rr:template "{./*[name()='bpmn:outgoing']}" ]
-    ],
-    [
-        rr:predicate bbo:has_sourceRef;
-        rr:objectMap [ rr:template "{./*[name()='bpmn:incoming']}" ]
-    ].
-
-teamingAI:inclusiveGatewayMapping
-    a rr:TriplesMap;
-
-    rml:logicalSource [
-        rml:source "<SOURCE_XML>";
-        rml:referenceFormulation ql:XPath;
-        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmn:process']//*[name()='bpmn:inclusiveGateway']"
-    ];
-
-    rr:subjectMap [
-        rr:template "{@id}"
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:InclusiveGateway ]
-    ],
-    [
-        rr:predicate teamingAI:belongsToProcess;
-        rr:objectMap [ rr:parentTriplesMap teamingAI:ProcessMapping ]
-    ],
-    [
-        rr:predicate bbo:DefaultSequenceFlow;
-        rr:objectMap [ rr:template "{@default}" ]
-    ],
-    [
-        rr:predicate bbo:name;
-        rr:objectMap [ rml:reference "@name" ]
-    ],
-    [
-        rr:predicate bbo:has_targetRef;
-        rr:objectMap [ rr:template "{./*[name()='bpmn:outgoing']}" ]
-    ],
-    [
-        rr:predicate bbo:has_sourceRef;
-        rr:objectMap [ rr:template "{./*[name()='bpmn:incoming']}" ]
-    ].
-
-teamingAI:ProcessMapping
-    a rr:TriplesMap;
-
-    rml:logicalSource [
-        rml:source "<SOURCE_XML>";
-        rml:referenceFormulation ql:XPath;
-        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmn:process']"
-    ];
-
-    rr:subjectMap [
-        rr:template "{@id}"
-    ];
-
-    rr:predicateObjectMap [
-        rr:predicate rdfs:subClassOf;
-        rr:objectMap [ rr:constant bbo:Process ]
-    ],
-    [
-        rr:predicate teamingAI:belongsToRAMILayer;
-        rr:objectMap [ rr:constant rami:Business ]
-    ],
-    [
-        rr:predicate teamingAI:belongsToView;
-        rr:objectMap [ rr:constant teamingAI:BusinessProcessManagementView ]
     ].
