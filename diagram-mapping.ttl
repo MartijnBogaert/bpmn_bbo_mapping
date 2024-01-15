@@ -1,0 +1,91 @@
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix bpmndi: <http://www.omg.org/spec/BPMN/20100524/DI#> .
+@prefix temp: <https://www.vlaanderen.be/agentschap-binnenlands-bestuur#> .
+
+temp:BPMNDiagramMapping
+    a rr:TriplesMap;
+
+    rml:logicalSource [
+        rml:source "dispatch-of-goods.bpmn";
+        rml:referenceFormulation ql:XPath;
+        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmndi:BPMNDiagram']"
+    ];
+
+    rr:subjectMap [
+        rr:template "{@id}";
+        rr:class bpmndi:BPMNDiagram
+    ].
+
+temp:BPMNPlaneMapping
+    a rr:TriplesMap;
+
+    rml:logicalSource [
+        rml:source "dispatch-of-goods.bpmn";
+        rml:referenceFormulation ql:XPath;
+        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmndi:BPMNDiagram']/*[name()='bpmndi:BPMNPlane']"
+    ];
+
+    rr:subjectMap [
+        rr:template "{@id}";
+        rr:class bpmndi:BPMNPlane
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate temp:belongsToDiagram;
+        rr:objectMap [ rr:parentTriplesMap temp:BPMNDiagramMapping ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate temp:bpmnElement;
+        rr:objectMap [ rr:template "{@bpmnElement}" ]
+    ].
+
+temp:BPMNShapeMapping
+    a rr:TriplesMap;
+
+    rml:logicalSource [
+        rml:source "dispatch-of-goods.bpmn";
+        rml:referenceFormulation ql:XPath;
+        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmndi:BPMNDiagram']/*[name()='bpmndi:BPMNPlane']/*[name()='bpmndi:BPMNShape']"
+    ];
+
+    rr:subjectMap [
+        rr:template "{@id}";
+        rr:class bpmndi:BPMNShape
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate temp:belongsToPlane;
+        rr:objectMap [ rr:parentTriplesMap temp:BPMNPlaneMapping ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate temp:bpmnElement;
+        rr:objectMap [ rr:template "{@bpmnElement}" ]
+    ].
+
+temp:BPMNEdgeMapping
+    a rr:TriplesMap;
+
+    rml:logicalSource [
+        rml:source "dispatch-of-goods.bpmn";
+        rml:referenceFormulation ql:XPath;
+        rml:iterator "/*[name()='bpmn:definitions']/*[name()='bpmndi:BPMNDiagram']/*[name()='bpmndi:BPMNPlane']/*[name()='bpmndi:BPMNEdge']"
+    ];
+
+    rr:subjectMap [
+        rr:template "{@id}";
+        rr:class bpmndi:BPMNEdge
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate temp:belongsToPlane;
+        rr:objectMap [ rr:parentTriplesMap temp:BPMNPlaneMapping ]
+    ];
+
+    rr:predicateObjectMap [
+        rr:predicate temp:bpmnElement;
+        rr:objectMap [ rr:template "{@bpmnElement}" ]
+    ].
